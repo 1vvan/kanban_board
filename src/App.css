@@ -1,0 +1,98 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  position: fixed;
+  width: 100%;
+}
+@media (max-width: 992px){
+  body{
+    position: relative;
+    background-color: #000e35;
+  }
+}
+
+.wrapper{
+  width: 100%;
+  height: 100vh;
+}
+.dark-mode{
+  background: url('../src/assets/images/kanban_bg__dark.jpeg') 0 0/cover no-repeat;
+}
+.light-mode{
+  background: url('../src/assets/images/kanban_bg__light.jpg') 0 0/cover no-repeat;
+}
+
+.main-title {
+  margin: 20px 0px 0px 0px;
+  width: 100%;
+
+  position: absolute;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main-title__link{
+  font-family: Montserrat;
+  color: rgb(253, 253, 253);
+  font-size: 22px;
+  font-weight: 600;
+  text-decoration: none;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  margin: 0px 0px 0px 30px;
+}
+.main-title img {
+  width: 30px;
+  height: 30px;
+}
+.main-title__change-bg-btn{
+  margin: 0px 30px 0px 0px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 2px solid #006398;
+  background: #009cef;
+  box-shadow: 0px 0px 15px #009cef;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  transition: all .2s ease 0s;
+}
+.main-title__change-bg-btn img{
+  width: 27px;
+  height: 27px;
+}
+.main-title__change-bg-btn:hover{
+  transform: scale(0.96);
+  box-shadow: 0px 0px 19px #009cef;
+  transition: all .2s ease 0s;
+}
+
+.container{
+  width: 90%;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Montserrat;
+  color: #fff;
+}

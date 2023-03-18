@@ -1,0 +1,257 @@
+.board-container{
+    padding: 70px 20px 20px 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 4%;
+}
+@media (max-width: 992px){
+    .board-container{
+        display: grid;
+        grid-template: 1fr 1fr / 1fr 1fr;
+        padding: 70px 20px 0px 20px;
+    }
+}
+@media (max-width: 426px) {
+    .board-container {
+        display: flex;
+        flex-direction: column;
+        gap: 4%;
+        padding: 70px 20px 0px 20px;
+    }
+}
+
+.board-column{
+    width: 22%;
+
+    font-family: Montserrat;
+    color: rgb(0, 0, 0);
+}
+@media (max-width: 992px){
+    .board-column{
+        width: 100%;
+    }
+}
+.column__body{
+    margin: 20px 0px 0px 0px;
+    min-height: 22px;
+    padding: 15px;
+    background-color: rgba(223, 227, 230, 0.9);
+    border: 1px solid rgb(194, 198, 200);
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.add-column{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.column__add-btn{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    width: 17px;
+    height: 17px;
+}
+.column__add-btn img{
+    width: 17px;
+    height: 17px;
+}
+
+.add-input{
+    font-family: Montserrat;
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+    background: transparent;
+    border: none;
+}
+.add-input::placeholder {
+    font-family: Montserrat;
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+}
+
+.add-input:focus {
+    outline: none;
+}
+
+.column__tasks{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.column__title{
+    font-family: Montserrat;
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+    font-size: 18px;
+    width: 80%;
+}
+
+.column{
+    position: relative;
+}
+.column__buttons{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    padding: 5px;
+    background-color: rgba(223, 227, 230, 0.9);
+    border: 1px solid rgb(194, 198, 200);
+    border-radius: 3px 3px 0px 0px;
+    opacity: 0;
+    transition: all .1s ease 0s;
+}
+.column:hover .column__buttons{
+    top: -8px;
+    opacity: 1;
+    transition: all .1s ease 0s;
+}
+.column__buttons button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    width: 17px;
+    height: 17px;
+}
+
+.column__buttons button img {
+    width: 17px;
+    height: 17px;
+}
+
+
+.add-task-modal{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.6);
+    border-radius: 4px;
+    width: 30%;
+    height: 30%;
+    overflow: auto;
+}
+.add-task-modal__form{
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.add-task-modal__title{
+    font-size: 20px;
+    color: rgb(253, 253, 253);
+}
+.add-task-modal__form input{
+    width: 100%;
+    height: 30px;
+
+    border: none;
+    border-bottom: 4px solid #009cef;
+    border-radius: 5px;
+    background: transparent;
+
+    font-family: Montserrat;
+    color: rgb(253, 253, 253);
+    font-size: 15px;
+}
+.add-task-modal__form input::placeholder {
+    font-family: Montserrat;
+    color: rgb(253, 253, 253);
+    font-size: 15px;
+}
+.add-task-modal__form input:focus {
+    outline: none;
+    border-color: rgb(255, 255, 0);
+    transition: border-color .2s ease 0s;
+}
+.add-task-modal__add-btn{
+    width: 50%;
+    height: 35px;
+    background-color: #009cef;
+    border: 2px solid rgb(0, 79, 214);
+    border-radius: 5px;
+    cursor: pointer;
+
+    font-family: Montserrat;
+    font-weight: 600;
+    color: #ffffff;
+
+    transition: all .3s ease 0s;
+}
+.add-task-modal__add-btn:hover {
+    transform: translateY(1.5px);
+    background-color: #009befcc;
+    transition: all .3s ease 0s;
+}
+.add-task-modal__close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    width: 17px;
+    height: 17px;
+}
+
+.add-task-modal__close-btn img {
+    width: 17px;
+    height: 17px;
+}
+
+
+.tasks-item{
+    margin: 15px 0px 0px 0px;
+
+    padding: 8px;
+    border: 4px solid rgb(197, 200, 201);
+    border-radius: 3px;
+    background-color: rgba(223, 227, 230, 1);
+
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+}
+.tasks-item button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    width: 17px;
+    height: 17px;
+}
+
+.tasks-item button img {
+    width: 17px;
+    height: 17px;
+}
+.tasks__subtitle{
+    font-size: 12px;
+    margin: 0px 0px 3px 0px;
+}
+.tasks__title{
+    margin: 0px 0px 7px 0px;
+}
+.tasks-content{
+    max-width: 90%;
+}
+.tasks__buttons{
+    width: 17px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    transition: opacity .2s ease 0s;
+}
